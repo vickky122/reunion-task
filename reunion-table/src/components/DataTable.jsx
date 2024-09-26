@@ -994,8 +994,10 @@ const data = [
 ];
 
 const DataTable = () => {
-  const [columnVisibility, setColumnVisibility] = useState({});
+  const [columnVisibility, setColumnVisibility] = useState({}); 
   const [globalFilter, setGlobalFilter] = useState('');
+
+  
 
   const columns = useMemo(
     () => [
@@ -1031,10 +1033,10 @@ const DataTable = () => {
     []
   );
 
-  // Fuzzy search logic using Fuse.js
+
   const fuse = new Fuse(data, {
     keys: ['name', 'category', 'subcategory'],
-    threshold: 0.3, // Adjust sensitivity
+    threshold: 0.3, 
   });
 
   const filteredData = globalFilter
